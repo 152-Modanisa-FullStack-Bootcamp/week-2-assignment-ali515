@@ -25,11 +25,11 @@ Vue.mixin({
             localStorage.setItem(keyFavorite, JSON.stringify(videos.filter(x => x.isFavorite)))
         },
         getFavorites() {
-            const json = localStorage.getItem(keyFavorite)
+            const json = localStorage.getItem(keyFavorite) || "[]"
             return JSON.parse(json)
         },
         getFavoriteCount() {
-            const json = localStorage.getItem(keyFavorite)
+            const json = localStorage.getItem(keyFavorite) || "[]"
             return JSON.parse(json).length
         }
     }
